@@ -18,7 +18,7 @@ const (
 )
 
 func getBase(decimals int64) int64 {
-	return decimals * ten
+	return ten ^ decimals
 }
 
 func NewFraction(parts int64, per int64) *Fraction {
