@@ -1,6 +1,9 @@
 package cmath
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 type Fraction struct {
 	Parts int64 `json:"parts"`
@@ -18,7 +21,7 @@ const (
 )
 
 func getBase(decimals int64) int64 {
-	return ten ^ decimals
+	return int64(math.Pow(ten, float64(decimals)))
 }
 
 func NewFraction(parts int64, per int64) *Fraction {
